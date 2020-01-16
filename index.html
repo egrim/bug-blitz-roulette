@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bug Blitz Roulette!</title>
+    </head>
+    <body onload="javascript:randomLink()">
+        <script type="text/javascript">
+            function randomLink(){
+                fetch('data.json')
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log(data);
+                        var randomIndex = Math.round(Math.random()*data.length);
+                        window.location = "https://salesforce.quip.com/V8FXAYD5pTsy#" + data[randomIndex];
+                    });
+            }
+        </script>
+        Redirecting...
+    </body>
+</html>
